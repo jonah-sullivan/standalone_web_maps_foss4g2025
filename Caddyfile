@@ -1,25 +1,21 @@
 # Configuration file for Caddy. Use once Caddy is installed
 # Usage: `caddy run` or from another directory, specify the path to this file with `caddy run --config /path/to/Caddyfile
-
 {
-	auto_https off
-}
+
+auto_https off}
 
 :1234 {
-	root * .
-	
-	# Add CORS headers to allow Maputnik to access resources (needed in Codespaces)
-	header {
-		Access-Control-Allow-Origin "*"
-		Access-Control-Allow-Methods "GET, OPTIONS"
-		Access-Control-Allow-Headers "Content-Type"
-	}
-	
-	# Handle OPTIONS preflight requests
-	@options method OPTIONS
-	handle @options {
-		respond 204
-	}
-	
-	file_server
-}
+root * .
+
+# Add CORS headers to allow Maputnik to access resources (needed in Codespaces)
+header {
+Access-Control-Allow-Origin "*"
+Access-Control-Allow-Methods "GET, OPTIONS"
+Access-Control-Allow-Headers "Content-Type"}
+
+# Handle OPTIONS preflight requests
+@options method OPTIONS
+handle @options {
+respond 204}
+
+file_server}

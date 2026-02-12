@@ -1,16 +1,16 @@
 {
   "version": 8,
   "sources": {
-    "te-ara-hura": {
+    "Morning Run and Ride": {
       "type": "geojson",
-      "data": "sources/te_ara_hura.geojson"
+      "data": "sources/run-ride.geojson"
     }
   },
   "layers": [
     {
-      "id": "trail-line",
+      "id": "Morning Run and Ride",
       "type": "line",
-      "source": "te-ara-hura",
+      "source": "Morning Run and Ride",
       "paint": {
         "line-color": "#e41f18",
         "line-width": 3,

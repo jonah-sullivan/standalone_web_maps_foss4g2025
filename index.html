@@ -23,18 +23,18 @@
 <body>
   <div id="map"></div>
  
- <script>
-  // Initialize PMTiles protocol
-   const protocol = new pmtiles.Protocol();
-   maplibregl.addProtocol("pmtiles", protocol.tile);
+  <script>
+    // Initialize PMTiles protocol
+    const protocol = new pmtiles.Protocol();
+    maplibregl.addProtocol("pmtiles", protocol.tile);
 
-   // Javascript to create a new map using Maplibre GL JS
-   const map = new maplibregl.Map({
-      container: 'map',
-      style: 'style.json',
-      center: [149.05, -35.32], // canberra coordinates
-      zoom: 12
-    });
-  </script>
+    // Javascript to create a new map using Maplibre GL JS
+    const map = new maplibregl.Map({
+        container: 'map',
+        style: 'style.json',
+        center: [149.05, -35.32], // canberra coordinates
+        zoom: 12
+      });
+    </script>
 </body>
 </html>

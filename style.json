@@ -8,7 +8,7 @@
   },
   "layers": [
     {
-      "id": "trail-line",
+      "id": "run-ride",
       "type": "line",
       "source": "run-ride",
       "paint": {

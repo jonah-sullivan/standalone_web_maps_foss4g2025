@@ -8,9 +8,13 @@
       "url": "pmtiles://sources/canberra.pmtiles.gz",
       "attribution": "© <a href=\"https://openstreetmap.org\" target=\"_blank\" rel=\"noopener noreferrer\">OpenStreetMap</a>"
     },
-    "run-ride": {
+    "run": {
       "type": "geojson",
-      "data": "sources/run-ride.geojson"
+      "data": "sources/run.geojson"
+    },
+    "ride": {
+      "type": "geojson",
+      "data": "sources/ride.geojson"
     },
     "terrain": {
       "type": "raster-dem",
@@ -4376,11 +4380,21 @@
       }
     },
     {
-      "id": "run-ride",
+      "id": "run",
       "type": "line",
-      "source": "run-ride",
+      "source": "run",
       "paint": {
         "line-color": "#e41f18",
+        "line-width": 3,
+        "line-dasharray": [2, 2]
+      }
+    },
+    {
+      "id": "ride",
+      "type": "line",
+      "source": "ride",
+      "paint": {
+        "line-color": "#B25509",
         "line-width": 3,
         "line-dasharray": [2, 2]
       }

@@ -44,15 +44,62 @@
       maxWidth: 100,
       unit: 'metric'
       }), 'bottom-left');
-    // Swap between trail layers on hover
-    map.on('mouseenter', 'run-ride', function() {
-      map.setLayoutProperty('run-ride', 'visibility', 'none');
-      map.setLayoutProperty('run-ride-hover', 'visibility', 'visible');
+    // Swap between run layers on hover
+    map.on('mouseenter', 'run', function() {
+      map.setLayoutProperty('run', 'visibility', 'none');
+      map.setLayoutProperty('run-hover', 'visibility', 'visible');
       });
-    map.on('mouseleave', 'run-ride-hover', function() {
-      map.setLayoutProperty('run-ride', 'visibility', 'visible');
-      map.setLayoutProperty('run-ride-hover', 'visibility', 'none');
+    map.on('mouseleave', 'run-hover', function() {
+      map.setLayoutProperty('run', 'visibility', 'visible');
+      map.setLayoutProperty('run-hover', 'visibility', 'none');
       });     
-    </script>
+    // Swap between ride layers on hover
+    map.on('mouseenter', 'ride', function() {
+      map.setLayoutProperty('ride', 'visibility', 'none');
+      map.setLayoutProperty('ride-hover', 'visibility', 'visible');
+      });
+    map.on('mouseleave', 'ride-hover', function() {
+      map.setLayoutProperty('ride', 'visibility', 'visible');
+      map.setLayoutProperty('ride-hover', 'visibility', 'none');
+      });  
+
+
+    class LayerToggleControl {
+      constructor(layerId, layerLabel) {
+        this.layerId = layerId;
+        this.layerLabel = layerLabel;
+      }
+
+      onAdd(map) {
+        this.map = map;
+        this.container = document.createElement('div');
+        this.container.className = 'maplibregl-ctrl maplibregl-ctrl-group';
+        
+        const button = document.createElement('button');
+        button.textContent = this.layerLabel;
+        button.className = 'layer-toggle-btn';
+        button.addEventListener('click', () => this.toggle());
+        
+        this.container.appendChild(button);
+        return this.container;
+      }
+
+      toggle() {
+        const visibility = this.map.getLayoutProperty(this.layerId, 'visibility');
+        this.map.setLayoutProperty(this.layerId, 'visibility',
+          visibility === 'visible' ? 'none' : 'visible'
+        );
+      }
+
+      onRemove() {
+        this.container.parentNode.removeChild(this.container);
+        this.map = undefined;
+      }
+    }
+
+    // Add to map
+    map.addControl(new LayerToggleControl('run', 'Run'), 'top-left');
+    map.addControl(new LayerToggleControl('ride', 'Ride'), 'top-left');
+  </script>
 </body>
 </html>

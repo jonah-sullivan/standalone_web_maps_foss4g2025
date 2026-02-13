@@ -4390,6 +4390,16 @@
       }
     },
     {
+      "id": "run-hover",
+      "type": "line",
+      "source": "run",
+      "paint": {
+        "line-color": "#cc0000",
+        "line-width": 3
+      },
+      "layout": {"visibility": "none"}
+    },
+    {
       "id": "ride",
       "type": "line",
       "source": "ride",
@@ -4398,6 +4408,16 @@
         "line-width": 3,
         "line-dasharray": [2, 2]
       }
+    },
+    {
+      "id": "ride-hover",
+      "type": "line",
+      "source": "ride",
+      "paint": {
+        "line-color": "#FF7500",
+        "line-width": 3
+      },
+      "layout": {"visibility": "none"}
     }
   ],
   "id": "kqze5mp"

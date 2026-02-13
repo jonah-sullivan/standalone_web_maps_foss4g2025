@@ -4394,7 +4394,7 @@
       "type": "line",
       "source": "run",
       "paint": {
-        "line-color": "#cc0000",
+        "line-color": "#e41f18",
         "line-width": 3
       },
       "layout": {"visibility": "none"}

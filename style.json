@@ -1,16 +1,16 @@
 {
   "version": 8,
   "sources": {
-    "te-ara-hura": {
+    "run-ride": {
       "type": "geojson",
-      "data": "sources/te_ara_hura.geojson"
+      "data": "sources/run-ride.geojson"
     }
   },
   "layers": [
     {
       "id": "trail-line",
       "type": "line",
-      "source": "te-ara-hura",
+      "source": "run-ride",
       "paint": {
         "line-color": "#e41f18",
         "line-width": 3,

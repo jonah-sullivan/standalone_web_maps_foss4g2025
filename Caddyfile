@@ -3,6 +3,7 @@
 
 {
 	auto_https off
+	admin off
 }
 
 :1234 {

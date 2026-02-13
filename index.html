@@ -35,6 +35,24 @@
         center: [149.05, -35.32], // canberra coordinates
         zoom: 12
       });
+    
+      // Add navigation controls
+    map.addControl(new maplibregl.NavigationControl(), 'top-right');
+    
+    // Add scale bar
+    map.addControl(new maplibregl.ScaleControl({
+      maxWidth: 100,
+      unit: 'metric'
+      }), 'bottom-left');
+    // Swap between trail layers on hover
+    map.on('mouseenter', 'run-ride', function() {
+      map.setLayoutProperty('run-ride', 'visibility', 'none');
+      map.setLayoutProperty('run-ride-hover', 'visibility', 'visible');
+      });
+    map.on('mouseleave', 'run-ride-hover', function() {
+      map.setLayoutProperty('run-ride', 'visibility', 'visible');
+      map.setLayoutProperty('run-ride-hover', 'visibility', 'none');
+      });     
     </script>
 </body>
 </html>

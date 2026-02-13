@@ -4384,6 +4384,16 @@
         "line-width": 3,
         "line-dasharray": [2, 2]
       }
+    },
+    {
+      "id": "run-ride-hover",
+      "type": "line",
+      "source": "run-ride",
+      "paint": {
+        "line-color": "#cc0000",
+        "line-width": 3
+        },
+      "layout": {"visibility": "none"}
     }
   ],
   "id": "kqze5mp"

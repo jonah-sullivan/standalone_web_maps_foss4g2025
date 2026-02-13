@@ -5,7 +5,7 @@
   "sources": {
     "protomaps": {
       "type": "vector",
-      "url": "pmtiles://sources/canberra.pmtiles",
+      "url": "pmtiles://sources/canberra.pmtiles.gz",
       "attribution": "© <a href=\"https://openstreetmap.org\" target=\"_blank\" rel=\"noopener noreferrer\">OpenStreetMap</a>"
     },
     "run-ride": {

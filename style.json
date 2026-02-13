@@ -4361,7 +4361,7 @@
     {
       "id": "run-ride",
       "type": "line",
-      "source": "https://jonah-sullivan.github.io/standalone_web_maps_foss4g2025/sources/run-ride.geojson",
+      "source": "run-ride",
       "paint": {
         "line-color": "#e41f18",
         "line-width": 3,

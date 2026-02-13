@@ -19,7 +19,7 @@
       "encoding": "terrarium"
     }
   },
-  "sprite": "lib/sprite/light",
+  "sprite": "https://jonah-sullivan.github.io/standalone_web_maps_foss4g2025/lib/sprite/light",
   "glyphs": "lib/fonts/{fontstack}/{range}.pbf",
   "layers": [
     {

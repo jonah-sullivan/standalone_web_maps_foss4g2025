@@ -86,8 +86,9 @@
 
       toggle() {
         const visibility = this.map.getLayoutProperty(this.layerId, 'visibility');
+        const isVisible = visibility === 'visible' || visibility === undefined || visibility === null;
         this.map.setLayoutProperty(this.layerId, 'visibility',
-          visibility === 'visible' ? 'none' : 'visible'
+          isVisible ? 'none' : 'visible'
         );
       }
 

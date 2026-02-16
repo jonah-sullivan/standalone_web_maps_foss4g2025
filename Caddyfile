@@ -21,5 +21,8 @@
 		respond 204
 	}
 
+	# Serve index.html for directory requests
+	try_files {path} {path}/ /index.html
+
 	file_server
 }

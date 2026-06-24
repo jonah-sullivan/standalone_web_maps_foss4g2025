@@ -30,11 +30,30 @@
 
     // Javascript to create a new map using Maplibre GL JS
     const map = new maplibregl.Map({
-        container: 'map',
-        style: 'style.json',
-        center: [144.97, -37.82], // canberra coordinates
-        zoom: 14
-      });
+    container: 'map',
+    style: {
+        'version': 8,
+        'sources': {
+            'osm-tiles': {
+                'type': 'raster',
+                'tiles': ['https://tile.openstreetmap.org/{z}/{x}/{y}.png'],
+                'tileSize': 256,
+                'attribution': '© OpenStreetMap contributors'
+            }
+        },
+        'layers': [
+            {
+                'id': 'osm-layer',
+                'type': 'raster',
+                'source': 'osm-tiles',
+                'minzoom': 0,
+                'maxzoom': 19
+            }
+        ]
+    },
+    center: [144.946457, -37.818069], // Docklands, Melbourne
+    zoom: 13
+    });
     
       // Add navigation controls
     map.addControl(new maplibregl.NavigationControl(), 'top-right');

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Canberra Bike Ride Map</title>
+  <title>PI 27.1 Run Map</title>
   
   <!-- Local copies of MapLibre GL JS -->
   <script src="lib/maplibre-gl.5.10.0.js"></script>
@@ -32,8 +32,8 @@
     const map = new maplibregl.Map({
         container: 'map',
         style: 'style.json',
-        center: [149.05, -35.32], // canberra coordinates
-        zoom: 12
+        center: [144.97, -37.82], // canberra coordinates
+        zoom: 14
       });
     
       // Add navigation controls
@@ -64,43 +64,43 @@
       });  
 
 
-    class LayerToggleControl {
-      constructor(layerId, layerLabel) {
-        this.layerId = layerId;
-        this.layerLabel = layerLabel;
-      }
-
-      onAdd(map) {
-        this.map = map;
-        this.container = document.createElement('div');
-        this.container.className = 'maplibregl-ctrl maplibregl-ctrl-group';
-        
-        const button = document.createElement('button');
-        button.textContent = this.layerLabel;
-        button.className = 'layer-toggle-btn';
-        button.addEventListener('click', () => this.toggle());
-        
-        this.container.appendChild(button);
-        return this.container;
-      }
-
-      toggle() {
-        const visibility = this.map.getLayoutProperty(this.layerId, 'visibility');
-        const isVisible = visibility === 'visible' || visibility === undefined || visibility === null;
-        this.map.setLayoutProperty(this.layerId, 'visibility',
-          isVisible ? 'none' : 'visible'
-        );
-      }
-
-      onRemove() {
-        this.container.parentNode.removeChild(this.container);
-        this.map = undefined;
-      }
-    }
-
-    // Add to map
-    map.addControl(new LayerToggleControl('run', 'Run'), 'top-left');
-    map.addControl(new LayerToggleControl('ride', 'Ride'), 'top-left');
+//    class LayerToggleControl {
+//      constructor(layerId, layerLabel) {
+//        this.layerId = layerId;
+//        this.layerLabel = layerLabel;
+//      }
+//
+//     onAdd(map) {
+//        this.map = map;
+//        this.container = document.createElement('div');
+//        this.container.className = 'maplibregl-ctrl maplibregl-ctrl-group';
+//        
+//       const button = document.createElement('button');
+//        button.textContent = this.layerLabel;
+//        button.className = 'layer-toggle-btn';
+//        button.addEventListener('click', () => this.toggle());
+//        
+//        this.container.appendChild(button);
+//        return this.container;
+//      }
+//
+//      toggle() {
+//        const visibility = this.map.getLayoutProperty(this.layerId, 'visibility');
+//        const isVisible = visibility === 'visible' || visibility === undefined || visibility === null;
+//        this.map.setLayoutProperty(this.layerId, 'visibility',
+//          isVisible ? 'none' : 'visible'
+//        );
+//      }
+//
+//      onRemove() {
+//        this.container.parentNode.removeChild(this.container);
+//        this.map = undefined;
+//      }
+//    }
+//
+//    // Add to map
+//    map.addControl(new LayerToggleControl('run', 'Run'), 'top-left');
+//    map.addControl(new LayerToggleControl('ride', 'Ride'), 'top-left');
   </script>
 </body>
 </html>

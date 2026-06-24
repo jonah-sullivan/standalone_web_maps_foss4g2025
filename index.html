@@ -39,6 +39,10 @@
                 'tiles': ['https://tile.openstreetmap.org/{z}/{x}/{y}.png'],
                 'tileSize': 256,
                 'attribution': '© OpenStreetMap contributors'
+            },
+            'run': {
+                'type': 'geojson',
+                'data': 'sources/run.geojson'
             }
         },
         'layers': [
@@ -48,6 +52,26 @@
                 'source': 'osm-tiles',
                 'minzoom': 0,
                 'maxzoom': 19
+            },
+            {
+                id: 'run',
+                type: 'line',
+                source: 'run',
+                paint: { 
+                  "line-color": "#e41f18",
+                  "line-width": 3,
+                  "line-dasharray": [2, 2] }
+            },
+            {
+                id: 'run-hover',
+                type: 'line',
+                source: 'run',
+                layout: { visibility: 'none' },
+                paint: {
+                  "line-color": "#b81515",
+                  "line-width": 3,
+                  "line-dasharray": [2, 2]
+                }
             }
         ]
     },
@@ -73,14 +97,14 @@
       map.setLayoutProperty('run-hover', 'visibility', 'none');
       });     
     // Swap between ride layers on hover
-    map.on('mouseenter', 'ride', function() {
-      map.setLayoutProperty('ride', 'visibility', 'none');
-      map.setLayoutProperty('ride-hover', 'visibility', 'visible');
-      });
-    map.on('mouseleave', 'ride-hover', function() {
-      map.setLayoutProperty('ride', 'visibility', 'visible');
-      map.setLayoutProperty('ride-hover', 'visibility', 'none');
-      });  
+//    map.on('mouseenter', 'ride', function() {
+//      map.setLayoutProperty('ride', 'visibility', 'none');
+//      map.setLayoutProperty('ride-hover', 'visibility', 'visible');
+//      });
+//    map.on('mouseleave', 'ride-hover', function() {
+//      map.setLayoutProperty('ride', 'visibility', 'visible');
+//      map.setLayoutProperty('ride-hover', 'visibility', 'none');
+//      });  
 
 
 //    class LayerToggleControl {
